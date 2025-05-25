@@ -31,6 +31,21 @@
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
     </main>
+
+    <button class="btn btn--instructions">📋 Instructions</button>
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2>How to Play 🎮</h2>
+      <ol class="instructions-list">
+        <li>Each player takes turns to roll a dice.</li>
+        <li>Rolling a number adds to your current score.</li>
+        <li>Roll a 1? You lose your current score!</li>
+        <li>Hold to add your current score to total.</li>
+        <li>First player to reach 100 wins! 🏆</li>
+      </ol>
+    </div>
+
+    <div class="overlay hidden"></div>
     <script src="script.js"></script>
   </body>
 </html>
