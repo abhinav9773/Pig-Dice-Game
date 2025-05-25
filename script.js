@@ -11,6 +11,11 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.btn--close-modal');
+const btnInstructions = document.querySelector('.btn--instructions');
+
 let scores, playing, currentScore, activePlayer;
 const Initialization = function () {
   score0.textContent = 0; //Puttin back scores to zero
@@ -86,4 +91,24 @@ btnHold.addEventListener('click', function () {
 
 btnNew.addEventListener('click', function () {
   Initialization();
+});
+
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+btnInstructions.addEventListener('click', openModal);
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
 });
