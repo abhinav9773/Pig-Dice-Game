@@ -1,5 +1,9 @@
 'use strict';
 
+//For sound on rolling the dice
+const clickSound = new Audio('sounds/click.mp3');
+clickSound.preload = 'auto';
+
 const player0El = document.querySelector('.player0');
 const player1El = document.querySelector('.player1');
 const score0 = document.querySelector('#score0');
@@ -47,6 +51,9 @@ const switchPlayer = function () {
 //rolling functions
 btnRoll.addEventListener('click', function () {
   if (playing) {
+    //For sounf on rolling
+    clickSound.currentTime = 0;
+    clickSound.play();
     //1. generating  a random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
 
